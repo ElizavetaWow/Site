@@ -1,0 +1,95 @@
+2020-05-06 00:51:42,080 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-06 00:51:58,712 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-06 00:52:08,138 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-06 00:53:41,127 ERROR: Exception on /schedule/1 [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 119, in schedule
+    variants = master.variants.filter_by(choosen=False).order_by(Shedule.date.desc()).paginate(
+AttributeError: type object 'Shedule' has no attribute 'date'
+2020-05-06 00:54:35,606 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-06 00:54:56,308 ERROR: Exception on /choose/12020-10-06 14:00:00 [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 221, in choose
+    form = ConfirmForm()
+NameError: name 'ConfirmForm' is not defined
+2020-05-06 00:56:53,877 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-06 00:57:06,006 ERROR: Exception on /choose/12020-05-06 06:30:00 [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 231, in choose
+    master = master_chosen, time = time, form = form)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lisa\salon\app\templates\confirm_variant.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\Lisa\salon\app\templates\confirm_variant.html", line 10, in block "app_content"
+    <p>{{_('On the date and time') }}: {{ moment(time).format('LLL') }}</p>
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_moment.py", line 130, in format
+    return self._render("format('%s')" % (fmt or ''), refresh)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_moment.py", line 123, in _render
+    t = self._timestamp_as_iso_8601(self.timestamp)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_moment.py", line 120, in _timestamp_as_iso_8601
+    return timestamp.strftime('%Y-%m-%dT%H:%M:%S' + tz)
+AttributeError: 'str' object has no attribute 'strftime'
+2020-05-06 00:59:33,309 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]

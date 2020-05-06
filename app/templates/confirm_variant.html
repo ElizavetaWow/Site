@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+	<table class="table table-hover">
+        <tr>
+            <td>
+                <h1>{{ _('User') }}: {{ current_user.username }}</h1>
+                <p>{{ _('You want to schedule to the master') }}: {{master.master}} </p>
+				<p>{{_('On the date and time') }}: {{ moment(time).format('LLL') }}</p>
+                <p>{{_('If you don\'t want to do this:') }} <a href="{{ url_for('user', username = master.master) }}">{{ _('Back') }}</a></p>
+
+            </td>
+        </tr>
+    </table>
+	{% if form %}
+		{{ wtf.quick_form(form) }}
+	<br>
+	{% endif %}
+
+{% endblock %}

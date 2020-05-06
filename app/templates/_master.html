@@ -1,0 +1,22 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('user', username=master.master) }}">
+				
+                <img src="{{ users[master.user_id|int -1].avatar(70) }}" />
+            </a>
+        </td>
+        <td>
+            {% set user_link %}
+				<a href="{{ url_for('user', username=master.master) }}">
+					{{ master.master }}
+				</a>
+			{% endset %}
+			<p>{{ _('%(username)s ', username=user_link) }}</p>
+			<p>{{ _('%(about_me)s ', about_me=users[master.user_id|int - 1].about_me) }}</p>
+			<p>{{ _('%(last_seen)s ', last_seen=moment(users[master.user_id|int - 1].last_seen).fromNow()) }}</p>
+            <br>
+			
+        </td>
+    </tr>
+</table>
