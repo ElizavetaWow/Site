@@ -20,3 +20,6 @@ NameError: name 'user_id' is not defined
 2020-05-07 02:08:33,558 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
 2020-05-07 02:09:22,255 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
 2020-05-07 02:11:11,299 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 17:25:08,770 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 17:25:35,266 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 17:25:56,327 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
