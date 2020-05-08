@@ -3,6 +3,7 @@ from app import db
 from app.models import Master
 import os, click
 
+
 @app.cli.group()
 def translate():
     """Translation and localization commands."""
@@ -18,7 +19,6 @@ def init(lang):
         raise RuntimeError('init command failed')
     os.remove('messages.pot')
 
-
 @translate.command()
 def update():
     """Update all languages."""
@@ -28,12 +28,12 @@ def update():
         raise RuntimeError('update command failed')
     os.remove('messages.pot')
 
-
 @translate.command()
 def compile():
     """Compile all languages."""
     if os.system('pybabel compile -d app/translations'):
         raise RuntimeError('compile command failed')
+
 
 @app.cli.group()
 def master():
