@@ -14,9 +14,9 @@ from flask_moment import Moment
 from flask_babel import Babel, lazy_gettext as _l
 
 app = Flask(__name__)
-db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 app.config.from_object(Config)
+db = SQLAlchemy(app)
 mail = Mail(app)
 migrate = Migrate(app, db)
 moment = Moment(app)
@@ -40,6 +40,7 @@ if not app.debug:
             credentials=auth, secure=secure)
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
+        
     if not os.path.exists('logs'):
         os.mkdir('logs')
     file_handler = RotatingFileHandler('logs/salon.log', maxBytes=10240,
@@ -51,10 +52,11 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('Salon startup')
 
+
 @babel.localeselector
 def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
-    #return 'ru'  
-    
+
+  
 from app import routes, models, errors
 

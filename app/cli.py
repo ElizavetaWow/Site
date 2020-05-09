@@ -1,8 +1,7 @@
 from app import app
 from app import db
-from app.models import Master
+from app.models import Master, User, Post
 import os, click
-
 
 @app.cli.group()
 def translate():
@@ -43,8 +42,8 @@ def master():
 @master.command()
 @click.argument('name')
 def add_master(name):
-    """Add new masster."""
-    m_check = Master.query.filter_by(master=name).first()
+    """Add new master."""
+    m_check = Master.query.filter_by(master = name).first()
     if m_check is None:
         m = Master(master = name)
         m.set_secret_key(name)
@@ -54,8 +53,38 @@ def add_master(name):
 @master.command()
 @click.argument('name')
 def del_master(name):
-    """Delete masster."""
-    m = Master.query.filter_by(master=name).first()
+    """Delete master."""
+    m = Master.query.filter_by(master = name).first()
     if not(m is None):
         db.session.delete(m)
+        db.session.commit()
+
+
+@app.cli.group()
+def user():
+    """User commands."""
+    pass
+
+@user.command()
+@click.argument('name')
+def del_user(name):
+    """Delete user."""
+    u = User.query.filter_by(username = name).first()
+    if not(u is None):
+        db.session.delete(u)
+        db.session.commit()
+
+
+@app.cli.group()
+def post():
+    """Post commands."""
+    pass
+
+@post.command()
+@click.argument('id')
+def del_post(id):
+    """Delete post."""
+    p = Post.query.filter_by(id = id).first()
+    if not(p is None):
+        db.session.delete(p)
         db.session.commit()

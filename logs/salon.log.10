@@ -1,4 +1,4 @@
-2020-05-05 18:48:55,697 ERROR: Exception on /user/Katya [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+2020-05-07 01:28:40,193 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 110, in user
-    next_url=next_url, prev_url=prev_url)
+  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
+    prev_url=prev_url)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
@@ -26,7 +26,7 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\user.html", line 2, in top-level template code
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -40,30 +40,16 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\user.html", line 23, in block "app_content"
-    <p><a href="{{ url_for('schedule', master_id=user.master_id) }}">{{ _('To schedule') }}</a></p>
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\werkzeug\routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'schedule' with values ['master_id']. Did you mean 'check_master' instead?
-2020-05-05 18:55:56,935 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 20:27:07,036 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 21:24:13,890 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 21:36:53,474 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 21:44:38,931 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 21:45:16,265 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 21:46:21,100 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 21:47:44,987 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 21:47:58,650 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 23:29:43,916 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 23:30:02,643 ERROR: Exception on /add_variant/1 [POST] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
+    {% include '_master.html' %}
+  File "C:\Users\Lisa\salon\app\templates\_master.html", line 8, in top-level template code
+    <img src="{{ users[u_id].avatar(70) }}" />
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'list object' has no attribute Markup('\n\t\t\t\t\n\t\t')
+2020-05-07 01:31:21,677 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:36:33,337 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:36:36,748 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -79,28 +65,37 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 155, in add_variant
-    day, month, year = form.date.data.splite('.')
-AttributeError: 'str' object has no attribute 'splite'
-2020-05-05 23:30:40,873 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-05 23:30:49,985 ERROR: Exception on /add_variant/1 [POST] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 156, in add_variant
-    hour, minute = form.time.data.splite(':')
-AttributeError: 'str' object has no attribute 'splite'
-2020-05-05 23:31:21,225 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 00:40:01,924 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
+    prev_url=prev_url)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
+    {% include '_master.html' %}
+  File "C:\Users\Lisa\salon\app\templates\_master.html", line 8, in top-level template code
+    <img src="{{ users[u_id].avatar(70) }}" />
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'list object' has no attribute Markup('\n\t\t\t\n\t\t')
+2020-05-07 01:40:51,594 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]

@@ -1,0 +1,21 @@
+<table class="table table-hover">
+    <tr>
+        <td width="70px">
+            <a href="{{ url_for('user', username=foll.username) }}">
+				
+                <img src="{{ foll.avatar(70) }}" />
+            </a>
+        </td>
+        <td>
+            {% set user_link %}
+				<a href="{{ url_for('user', username=foll.username) }}">
+					{{ foll.username }}
+				</a>
+			{% endset %}
+			<p>{{ _('%(username)s ', username=user_link) }}</p>
+			<p>{{ _('Last seen on') }}: {{ moment(foll.last_seen).format('LLL') }}</p>
+            <br>
+			
+        </td>
+    </tr>
+</table>

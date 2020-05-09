@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-05-03 23:46+0300\n"
+"POT-Creation-Date: 2020-05-09 19:01+0300\n"
 "PO-Revision-Date: 2020-05-03 21:12+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -27,128 +27,236 @@ msgstr "Пожалуйста, войдите в систему, чтобы по�
 msgid "[Salon] Reset Your Password"
 msgstr "[Salon] Сброс Пароля"
 
-#: app/forms.py:8 app/forms.py:15 app/forms.py:34
+#: app/forms.py:9 app/forms.py:27 app/forms.py:34
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: app/forms.py:9 app/forms.py:17 app/forms.py:60
-msgid "Password"
-msgstr "Пароль"
-
-#: app/forms.py:10
-msgid "Remember Me"
-msgstr "Запомнить меня"
-
-#: app/forms.py:11 app/routes.py:51 app/templates/login.html:5
-msgid "Sign In"
-msgstr "Войти"
-
-#: app/forms.py:16 app/forms.py:55
+#: app/forms.py:10 app/forms.py:67
 msgid "Email"
 msgstr "Email"
 
-#: app/forms.py:19 app/forms.py:62
+#: app/forms.py:11 app/forms.py:28 app/forms.py:72
+msgid "Password"
+msgstr "Пароль"
+
+#: app/forms.py:12 app/forms.py:74
 msgid "Repeat Password"
 msgstr "Повторите пароль"
 
-#: app/forms.py:20 app/routes.py:87 app/templates/register.html:5
+#: app/forms.py:13 app/routes.py:324 app/templates/register.html:5
 msgid "Register"
 msgstr "Регистрация"
 
-#: app/forms.py:25 app/forms.py:46
+#: app/forms.py:18 app/forms.py:47
 msgid "Please use a different username."
 msgstr "Пожалуйста, используйте другое имя пользователя."
 
-#: app/forms.py:30
+#: app/forms.py:23
 msgid "Please use a different email address."
 msgstr "Пожалуйста, используйте другой адрес электронной почты."
 
+#: app/forms.py:29
+msgid "Remember Me"
+msgstr "Запомнить меня"
+
+#: app/forms.py:30 app/routes.py:375 app/templates/login.html:5
+msgid "Sign In"
+msgstr "Войти"
+
 #: app/forms.py:35
 msgid "About me"
-msgstr "Моя страница"
+msgstr "Обо мне"
 
-#: app/forms.py:36 app/forms.py:51
+#: app/forms.py:36
+msgid "I am a master"
+msgstr "Я мастер"
+
+#: app/forms.py:37 app/forms.py:80
 msgid "Submit"
 msgstr "Опубликовать"
 
-#: app/forms.py:50
-msgid "Say something"
-msgstr "Напишите что-нибудь"
+#: app/forms.py:51
+msgid "Secret Key"
+msgstr "Секретный код"
 
-#: app/forms.py:56 app/forms.py:63
+#: app/forms.py:52
+msgid "Specialization"
+msgstr "Специализация"
+
+#: app/forms.py:53 app/forms.py:59
+msgid "Send"
+msgstr "Отправить"
+
+#: app/forms.py:57
+msgid "Date (dd.mm.yyyy)"
+msgstr "Дата (дд:мм:гггг)"
+
+#: app/forms.py:58
+msgid "Time (hh:mm)"
+msgstr "Время (чч:мм)"
+
+#: app/forms.py:63
+msgid "Yes"
+msgstr "Да"
+
+#: app/forms.py:68 app/forms.py:75
 msgid "Request Password Reset"
 msgstr "Сбросить пароль"
 
-#: app/routes.py:22
-msgid "Your post is now live!"
-msgstr "Ваш пост опубликован!"
+#: app/forms.py:79
+msgid "Say something"
+msgstr "Напишите что-нибудь"
 
-#: app/routes.py:31 app/templates/base.html:21
+#: app/routes.py:37 app/templates/base.html:21
 msgid "Home"
 msgstr "Главная"
 
-#: app/routes.py:44
-msgid "Invalid username or password"
-msgstr "Неверное имя пользователя или пароль"
+#: app/routes.py:53 app/routes.py:79
+msgid "Your post is now live!"
+msgstr "Ваш пост опубликован!"
 
-#: app/routes.py:85
-msgid "Congratulations, you are now a registered user!"
-msgstr "Поздравляю, теперь Вы зарегистрированный пользователь!"
+#: app/routes.py:62 app/templates/base.html:22
+msgid "Blog"
+msgstr "Блог"
 
-#: app/routes.py:98
+#: app/routes.py:104
 msgid "Your changes have been saved."
 msgstr "Ваши изменения были сохранены."
 
-#: app/routes.py:103 app/templates/edit_profile.html:5
+#: app/routes.py:109 app/templates/edit_profile.html:5
 msgid "Edit Profile"
-msgstr "Редактировать Профиль"
+msgstr "Редактировать профиль"
 
-#: app/routes.py:119 app/routes.py:135
+#: app/routes.py:126
+msgid "You have confirmed your status."
+msgstr "Вы подтвердили свой статус."
+
+#: app/routes.py:128
+msgid "You are not a master or your secret key is not right."
+msgstr "Вы не являетесь мастером или ваш секретный код неверен."
+
+#: app/routes.py:130 app/templates/check_master.html:5
+msgid "Check master"
+msgstr "Проверка статуса мастера"
+
+#: app/routes.py:141
+msgid "The date format is incorrect."
+msgstr "Формат даты неверен."
+
+#: app/routes.py:144
+msgid "The time format is incorrect."
+msgstr "Формат времени неверен."
+
+#: app/routes.py:149
+msgid "It is not a working hour."
+msgstr "Это не рабочее время."
+
+#: app/routes.py:155
+msgid "Date and time are incorrect."
+msgstr "Дата и время некорректны."
+
+#: app/routes.py:164
+msgid "You have added new schedule variant!"
+msgstr "Вы добавили новый вариант в расписание!"
+
+#: app/routes.py:166
+msgid "This variant is already added."
+msgstr "Этот вариант уже добавлен."
+
+#: app/routes.py:169 app/templates/add_variant.html:5
+msgid "Add Schedule Variant"
+msgstr "Добавление времени для записи"
+
+#: app/routes.py:185 app/templates/_master.html:27 app/templates/user.html:25
+msgid "To schedule"
+msgstr "Записаться"
+
+#: app/routes.py:202
+msgid "You scheduled successfully."
+msgstr "Запись проведена успешно."
+
+#: app/routes.py:205
+msgid "Confirm the choice"
+msgstr "Подтверждение выбора"
+
+#: app/routes.py:207
+msgid "You want to schedule to the master"
+msgstr "Вы хотите записаться к мастеру"
+
+#: app/routes.py:224 app/templates/user.html:31
+msgid "Actual schedules"
+msgstr "Актуальные записи"
+
+#: app/routes.py:241
+msgid "Followers"
+msgstr "Подписчики"
+
+#: app/routes.py:259
+msgid "Followings"
+msgstr "Подписки"
+
+#: app/routes.py:274 app/templates/_point.html:18
+msgid "Cancel the appointment"
+msgstr "Отменить запись"
+
+#: app/routes.py:275
+msgid "You want to cancel the appointment to"
+msgstr "Вы хотитите отменить запись к"
+
+#: app/routes.py:285 app/routes.py:301
 #, python-format
 msgid "User %(username)s not found."
 msgstr "Пользователь %(username)s не найден."
 
-#: app/routes.py:122
+#: app/routes.py:288
 msgid "You cannot follow yourself!"
 msgstr "Вы не можете подписаться на себя!"
 
-#: app/routes.py:126
+#: app/routes.py:292
 #, python-format
 msgid "You are following %(username)s!"
 msgstr "Вы подписаны на %(username)s!"
 
-#: app/routes.py:138
+#: app/routes.py:304
 msgid "You cannot unfollow yourself!"
 msgstr "Вы не можете отписаться от себя!"
 
-#: app/routes.py:142
+#: app/routes.py:308
 #, python-format
 msgid "You are not following %(username)s."
 msgstr "Вы отписались от %(username)s."
 
-#: app/routes.py:156 app/templates/base.html:22
-msgid "Explore"
-msgstr "Исследовать"
+#: app/routes.py:322
+msgid "Congratulations, you are now a registered user!"
+msgstr "Поздравляю, теперь Вы зарегистрированный пользователь!"
 
-#: app/routes.py:170
+#: app/routes.py:337
 msgid "Check your email for the instructions to reset your password"
 msgstr "Проверьте свою электронную почту для получения инструкций по сбросу пароля"
 
-#: app/routes.py:172 app/templates/reset_password_request.html:5
+#: app/routes.py:340 app/templates/reset_password_request.html:5
 msgid "Reset Password"
 msgstr "Сброс пароля"
 
-#: app/routes.py:186
+#: app/routes.py:354
 msgid "Your password has been reset."
 msgstr "Ваш пароль был сброшен."
+
+#: app/routes.py:356
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: app/routes.py:368
+msgid "Invalid username or password"
+msgstr "Неверное имя пользователя или пароль"
 
 #: app/templates/404.html:4
 msgid "File Not Found"
 msgstr "Файл не найден"
 
-#: app/templates/404.html:5 app/templates/500.html:6
-msgid "Back"
-msgstr "Назад"
+#: app/templates/404.html:9 app/templates/500.html:10
+msgid "Go to Home"
+msgstr "Перейти на Главную"
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
@@ -156,43 +264,143 @@ msgstr "Возникла непредвиденная ошибка"
 
 #: app/templates/500.html:5
 msgid "The administrator has been notified. Sorry for the inconvenience!"
-msgstr ""
-"Администратор был уведомлен об ошибке. Извините за доставленные "
-"неудобства!"
+msgstr "Администратор был уведомлен об ошибке. Извините за доставленные неудобства!"
+
+#: app/templates/_folls.html:15
+#, python-format
+msgid "%(username)s "
+msgstr "%(username)s "
+
+#: app/templates/_folls.html:16 app/templates/user.html:12
+msgid "Last seen on"
+msgstr "Последний раз был(а) в сети"
+
+#: app/templates/_master.html:15
+#, python-format
+msgid "Username: %(username)s "
+msgstr "Пользователь: %(username)s "
+
+#: app/templates/_master.html:16
+#, python-format
+msgid "Specialization: %(spec)s "
+msgstr "Специализация: %(spec)s "
+
+#: app/templates/_master.html:17
+#, python-format
+msgid "About me: %(about_me)s "
+msgstr "Обо мне: %(about_me)s "
+
+#: app/templates/_master.html:18
+#, python-format
+msgid "Last seen: %(last_seen)s "
+msgstr "Последний раз был(а) в сети: %(last_seen)s "
+
+#: app/templates/_point.html:9
+#, python-format
+msgid "To: %(master)s"
+msgstr "К: %(master)s"
+
+#: app/templates/_point.html:10
+#, python-format
+msgid "On: %(date)s"
+msgstr "На: %(date)s"
 
 #: app/templates/_post.html:14
 #, python-format
-msgid "%(username)s said %(when)s"
-msgstr "%(username)s написал(а) %(when)s"
+msgid "%(username)s said %(when)s:"
+msgstr "%(username)s написал(а) %(when)s:"
 
-#: app/templates/base.html:4
+#: app/templates/actual_schedules.html:5
+msgid "It is your actual schedule!"
+msgstr "Ваше актульное расписание!"
+
+#: app/templates/actual_schedules.html:6
+msgid "You have appointments:"
+msgstr "У вас есть записи:"
+
+#: app/templates/actual_schedules.html:14 app/templates/schedule.html:14
+msgid "Earlier"
+msgstr "Более рание"
+
+#: app/templates/actual_schedules.html:19
+msgid "Back to my profile"
+msgstr "Вернуться с своему профилю"
+
+#: app/templates/actual_schedules.html:24 app/templates/schedule.html:24
+msgid "Later"
+msgstr "Более поздние"
+
+#: app/templates/base.html:4 app/templates/index.html:5
 msgid "Welcome to Salon"
-msgstr "Добро пожаловать в Салон!"
+msgstr "Добро пожаловать в Salon!"
 
-#: app/templates/base.html:26
-msgid "Login"
-msgstr "Войти"
-
-#: app/templates/base.html:28
+#: app/templates/base.html:24
 msgid "Profile"
 msgstr "Профиль"
 
 #: app/templates/base.html:29
+msgid "Login"
+msgstr "Войти"
+
+#: app/templates/base.html:31
 msgid "Logout"
 msgstr "Выйти"
 
-#: app/templates/index.html:5
+#: app/templates/blog.html:6
 #, python-format
 msgid "Hi, %(username)s!"
-msgstr "Здравствуй, %(username)s!"
+msgstr "Здравствуйте, %(username)s!"
 
-#: app/templates/index.html:17 app/templates/user.html:31
+#: app/templates/blog.html:12
+msgid "Welcome to Blog"
+msgstr "Добро пожаловать в Блог"
+
+#: app/templates/blog.html:21 app/templates/follow_ers_ings.html:13
+#: app/templates/user.html:49
 msgid "Newer posts"
 msgstr "Новые публикации"
 
-#: app/templates/index.html:22 app/templates/user.html:36
+#: app/templates/blog.html:26 app/templates/follow_ers_ings.html:23
+#: app/templates/user.html:54
 msgid "Older posts"
 msgstr "Старые публикации"
+
+#: app/templates/check_master.html:6
+msgid "If you do not know the secret key, just click on \"Send\""
+msgstr "Если вы не знаете секретный код, просто нажмите \"Отправить\""
+
+#: app/templates/conf.html:10
+msgid "On the date and time"
+msgstr "На дату и время"
+
+#: app/templates/conf.html:11
+msgid "If you don't want to do this: "
+msgstr "Если вы не хотите делать этого:"
+
+#: app/templates/conf.html:12
+msgid "Back "
+msgstr "Назад "
+
+#: app/templates/follow_ers_ings.html:5
+#, python-format
+msgid "My %(follow)s"
+msgstr "Мои %(follow)s"
+
+#: app/templates/follow_ers_ings.html:18
+msgid "Back to profile"
+msgstr "Вернуться к профилю"
+
+#: app/templates/index.html:6
+msgid "Our masters"
+msgstr "Наши мастера"
+
+#: app/templates/index.html:14
+msgid "Back"
+msgstr "Назад"
+
+#: app/templates/index.html:19
+msgid "More"
+msgstr "Вперёд"
 
 #: app/templates/login.html:12
 msgid "New User?"
@@ -214,33 +422,52 @@ msgstr "Нажмите, чтобы сбросить его"
 msgid "Reset Your Password"
 msgstr "Сбросить пароль"
 
-#: app/templates/user.html:8
+#: app/templates/schedule.html:5
+#, python-format
+msgid "Schedule to %(username)s!"
+msgstr "Записаться к %(username)s!"
+
+#: app/templates/schedule.html:6
+msgid "Possible variants: "
+msgstr "Возможные варианты: "
+
+#: app/templates/schedule.html:19
+msgid "To Home"
+msgstr "На Главную"
+
+#: app/templates/user.html:9
 msgid "User"
 msgstr "Пользователь"
 
-#: app/templates/user.html:11
-msgid "Last seen on"
-msgstr "Последний раз был(а) в сети"
-
-#: app/templates/user.html:13
+#: app/templates/user.html:14
 #, python-format
 msgid "%(count)d followers"
 msgstr "%(count)d подписчиков"
 
-#: app/templates/user.html:13
+#: app/templates/user.html:15
 #, python-format
 msgid "%(count)d following"
 msgstr "%(count)d подписок"
 
-#: app/templates/user.html:15
+#: app/templates/user.html:18
 msgid "Edit your profile"
 msgstr "Редактировать профиль"
 
-#: app/templates/user.html:17
+#: app/templates/user.html:20
 msgid "Follow"
 msgstr "Подписаться"
 
-#: app/templates/user.html:19
+#: app/templates/user.html:22
 msgid "Unfollow"
 msgstr "Отписаться"
+
+#: app/templates/user.html:28
+msgid "Add schedule variant"
+msgstr "Добавить в расписание"
+
+#~ msgid "Explore"
+#~ msgstr "Исследовать"
+
+#~ msgid "%(username)s said %(when)s"
+#~ msgstr "%(username)s написал(а) %(when)s"
 

@@ -1,4 +1,4 @@
-2020-05-07 02:07:15,212 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+2020-05-09 23:02:51,870 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -12,14 +12,47 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 23, in index
-    masters = Master.query.filter(type(user_id) == int).paginate(
-NameError: name 'user_id' is not defined
-2020-05-07 02:08:33,558 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 02:09:22,255 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 02:11:11,299 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 17:25:08,770 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 17:25:35,266 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 17:25:56,327 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+  File "C:\Users\Lisa\salon\app\routes.py", line 41, in index
+    next_url = next_url, prev_url = prev_url)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 52, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 8, in block "app_content"
+    {% include '_master.html' %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lisa\salon\app\templates\_master.html", line 31, in template
+    {% elif %}
+jinja2.exceptions.TemplateSyntaxError: Expected an expression, got 'end of statement block'
+2020-05-09 23:03:32,680 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 23:09:01,882 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 23:09:40,239 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 23:49:16,568 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 23:49:31,997 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-10 00:01:03,244 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-10 00:01:38,363 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-10 00:03:07,774 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-10 00:04:49,598 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]

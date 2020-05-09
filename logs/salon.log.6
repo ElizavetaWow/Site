@@ -1,5 +1,5 @@
-2020-05-06 01:20:31,302 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:20:43,124 ERROR: Exception on /schedule/1 [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+2020-05-07 01:52:22,078 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:52:25,608 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,49 +15,12 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 126, in schedule
-    next_url=next_url, prev_url=prev_url)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\schedule.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\schedule.html", line 7, in block "app_content"
-    {% include '_variant.html' %}
-  File "C:\Users\Lisa\salon\app\templates\_variant.html", line 4, in top-level template code
-    <a href="{{ url_for('choose', variant = str(variant.master_id)+'.'+ str(variant.date_time)) }}">
-jinja2.exceptions.UndefinedError: 'str' is undefined
-2020-05-06 01:25:23,350 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:26:33,639 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:44:11,318 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:49:38,357 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:50:53,727 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 16:55:22,774 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 16:56:01,173 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 16:56:24,620 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 16:59:39,826 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 17:07:27,782 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 18:09:08,871 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 18:09:17,256 ERROR: Exception on /user/john [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+  File "C:\Users\Lisa\salon\app\routes.py", line 22, in index
+    masters = Master.query.filter_by(user_id!=null).paginate(
+NameError: name 'user_id' is not defined
+2020-05-07 01:57:34,528 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:58:10,953 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:58:12,653 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -73,50 +36,109 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 111, in user
-    next_url=next_url, prev_url=prev_url)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\user.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\user.html", line 29, in block "app_content"
-    <p><a href="{{ url_for('actual_schedules', username = current_user.username) }}">{{ _('Actual schedules') }}</a></p>
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2216, in handle_url_build_error
+  File "C:\Users\Lisa\salon\app\routes.py", line 22, in index
+    masters = Master.query.filter_by(user_id != None).paginate(
+NameError: name 'user_id' is not defined
+2020-05-07 01:59:07,019 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:59:34,178 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:59:35,579 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
     reraise(exc_type, exc_value, tb)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
     raise value
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\werkzeug\routing.py", line 2179, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'actual_schedules' with values ['username']. Did you mean 'schedule' instead?
-2020-05-07 00:31:33,323 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 00:33:20,934 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 00:35:41,976 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 00:37:03,234 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 00:45:17,130 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 00:56:59,951 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 01:19:25,852 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 01:28:38,199 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 22, in index
+    u_id = not(Null)
+NameError: name 'Null' is not defined
+2020-05-07 01:59:54,380 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:59:55,993 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 22, in index
+    u_id = not(null)
+NameError: name 'null' is not defined
+2020-05-07 02:02:36,707 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 02:03:31,155 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 02:03:33,944 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 23, in index
+    masters = Master.query.filter_by(not(user_id == u_id)).paginate(
+NameError: name 'user_id' is not defined
+2020-05-07 02:03:52,827 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 02:03:54,451 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 23, in index
+    masters = Master.query.filter(not(user_id == u_id)).paginate(
+NameError: name 'user_id' is not defined
+2020-05-07 02:06:28,845 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 02:06:30,494 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 23, in index
+    masters = Master.query.filter(user_id).paginate(
+NameError: name 'user_id' is not defined
+2020-05-07 02:07:13,372 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]

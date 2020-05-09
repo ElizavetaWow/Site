@@ -1,4 +1,4 @@
-2020-05-07 01:43:09,432 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+2020-05-09 12:59:08,157 ERROR: Exception on /actual_schedules/david [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
-    prev_url=prev_url)
+  File "C:\Users\Lisa\salon\app\routes.py", line 224, in actual_schedules
+    next_url = next_url, prev_url = prev_url)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
@@ -26,7 +26,7 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
+  File "C:\Users\Lisa\salon\app\templates\actual_schedules.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -40,15 +40,29 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
-    {% include '_master.html' %}
-  File "C:\Users\Lisa\salon\app\templates\_master.html", line 9, in top-level template code
-    <img src="{{ users[master.user_id].avatar(70) }}" />
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 471, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: list object has no element 6
-2020-05-07 01:45:44,474 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 01:45:48,237 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+  File "C:\Users\Lisa\salon\app\templates\actual_schedules.html", line 7, in block "app_content"
+    {% include '_point.html' %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Lisa\salon\app\templates\_point.html", line 6, in template
+    <p>{{ _('On: %(moment)s', moment = moment(variant.date_time).format('LLL') }}</p>
+jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+2020-05-09 12:59:53,360 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 13:02:35,730 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 13:03:05,039 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 13:05:16,464 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 14:11:29,137 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 14:13:25,327 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:03:31,247 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:04:25,052 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:05:35,297 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:06:15,113 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:06:37,747 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:09:13,951 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:10:51,602 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:10:59,044 ERROR: Exception on /cancel/3 [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -64,83 +78,32 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
-    prev_url=prev_url)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
+  File "C:\Users\Lisa\salon\app\routes.py", line 274, in cancel
+    variant = variant, form = form)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
-    {% include '_master.html' %}
-  File "C:\Users\Lisa\salon\app\templates\_master.html", line 9, in top-level template code
-    <img src="{{ users[master.user_id - 1].avatar(70) }}" />
-TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
-2020-05-07 01:46:18,853 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-07 01:46:20,053 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
-    prev_url=prev_url)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
-    ctx.app,
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
-    rv = template.render(context)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
-    self.environment.handle_exception()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
-    reraise(*rewrite_traceback_stack(source=source))
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
-    raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
-    {% block doc -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
-    {%- block html %}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
-    {% block body -%}
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
-    {% block content -%}
-  File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
-    {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
-    {% include '_master.html' %}
-  File "C:\Users\Lisa\salon\app\templates\_master.html", line 9, in top-level template code
-    <img src="{{ users[(master.user_id) - 1].avatar(70) }}" />
-TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
-2020-05-07 01:49:25,594 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+  File "C:\Users\Lisa\salon\app\templates\cancel.html", line 9, in template
+    <p>{{_('You want to cancel the appointment to') }}: {{variant.master.master}} </p>
+jinja2.exceptions.TemplateSyntaxError: expected token ',', got 'You'
+2020-05-09 15:11:25,500 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:12:58,215 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:13:48,255 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:34:37,591 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:35:25,420 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:37:41,940 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:43:04,875 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]
+2020-05-09 15:46:49,263 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:53]

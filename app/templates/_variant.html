@@ -1,11 +1,16 @@
 <table class="table table-hover">
     <tr>
         <td>
+			<span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
 			<a href="{{ url_for('choose', variant = variant.master_id|string +'.'+ variant.date_time|string) }}">
 				{{ moment(variant.date_time).format('LLL') }}
 			</a>
             <br>
 			
         </td>
+		<td>
+		
+		
+		</td>
     </tr>
 </table>

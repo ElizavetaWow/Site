@@ -11,7 +11,9 @@
                 {% if user.last_seen %}
                 <p>{{ _('Last seen on') }}: {{ moment(user.last_seen).format('LLL') }}</p>
                 {% endif %}
-                <p>{{ _('%(count)d followers', count=user.followers.count()) }}, {{ _('%(count)d following', count=user.followed.count()) }}</p>
+                <p><a href="{{ url_for('followers', username=user.username) }}">{{ _('%(count)d followers', count=user.followers.count()) }}</a>, 
+				<a href="{{ url_for('followings', username=user.username) }}">{{ _('%(count)d following', count=user.followed.count()) }}</a>
+				</p>
                 {% if user == current_user %}
                 <p><a href="{{ url_for('edit_profile') }}">{{ _('Edit your profile') }}</a></p>
                 {% elif not current_user.is_following(user) %}
@@ -20,7 +22,7 @@
                 <p><a href="{{ url_for('unfollow', username=user.username) }}">{{ _('Unfollow') }}</a></p>
                 {% endif %}
 				{% if user != current_user and user.master_id %}
-				<p><a href="{{ url_for('schedule', master_id=user.master_id) }}">{{ _('To schedule') }}</a></p>
+				<p><a href="{{ url_for('to_schedule', master_id=user.master_id) }}">{{ _('To schedule') }}</a></p>
 				{% endif %}
 				{% if user == current_user and user.master_id %}
 				<p><a href="{{ url_for('add_variant', master_id=user.master_id) }}">{{ _('Add schedule variant') }}</a></p>

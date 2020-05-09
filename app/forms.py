@@ -4,24 +4,7 @@ from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Le
 from app.models import User
 from flask_babel import _, lazy_gettext as _l
 
-class LoginForm(FlaskForm):
-    username = StringField(_l('Username'), validators=[DataRequired()])
-    password = PasswordField(_l('Password'), validators=[DataRequired()])
-    remember_me = BooleanField(_l('Remember Me'))
-    submit = SubmitField(_l('Sign In'))
- 
-class AddScheduleForm(FlaskForm):
-    date = StringField(_l('Date (dd.mm.yyyy)'), validators=[DataRequired()])
-    time = StringField(_l('Time (hh:mm)'), validators=[DataRequired()])
-    submit = SubmitField(_l('Send'))
-    
-class ConfirmForm(FlaskForm):
-     submit = SubmitField(_l('Yes'))
-  
-class CheckMasterForm(FlaskForm):
-    secret_key = StringField(_l('Secret Key'))
-    submit = SubmitField(_l('Send'))
-    
+
 class RegistrationForm(FlaskForm):
     username = StringField(_l('Username'), validators=[DataRequired()])
     email = StringField(_l('Email'), validators=[DataRequired(), Email()])
@@ -38,10 +21,18 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError(_('Please use a different email address.'))
-  
+
+ 
+class LoginForm(FlaskForm):
+    username = StringField(_l('Username'), validators=[DataRequired()])
+    password = PasswordField(_l('Password'), validators=[DataRequired()])
+    remember_me = BooleanField(_l('Remember Me'))
+    submit = SubmitField(_l('Sign In'))
+ 
+
 class EditProfileForm(FlaskForm):
     username = StringField(_l('Username'), validators=[DataRequired()])
-    about_me = TextAreaField(_l('About me'), validators=[Length(min=0, max=140)])
+    about_me = TextAreaField(_l('About me'), validators=[Length(min=0, max=40)])
     master = BooleanField(_l('I am a master'))
     submit = SubmitField(_l('Submit'))
 
@@ -56,18 +47,35 @@ class EditProfileForm(FlaskForm):
                 raise ValidationError(_('Please use a different username.'))
 
 
-class PostForm(FlaskForm):
-    post = TextAreaField(_l('Say something'), validators=[DataRequired()])
-    submit = SubmitField(_l('Submit'))
+class CheckMasterForm(FlaskForm):
+    secret_key = StringField(_l('Secret Key'))
+    specialization = StringField(_l('Specialization'))
+    submit = SubmitField(_l('Send'))
     
+
+class AddScheduleForm(FlaskForm):
+    date = StringField(_l('Date (dd.mm.yyyy)'), validators=[DataRequired()])
+    time = StringField(_l('Time (hh:mm)'), validators=[DataRequired()])
+    submit = SubmitField(_l('Send'))
+
+
+class ConfirmForm(FlaskForm):
+    submit = SubmitField(_l('Yes'))
+
     
 class ResetPasswordRequestForm(FlaskForm):
     email = StringField(_l('Email'), validators=[DataRequired(), Email()])
     submit = SubmitField(_l('Request Password Reset'))
- 
- 
+
+
 class ResetPasswordForm(FlaskForm):
     password = PasswordField(_l('Password'), validators=[DataRequired()])
     password2 = PasswordField(
         _l('Repeat Password'), validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField(_l('Request Password Reset'))
+
+
+class PostForm(FlaskForm):
+    post = TextAreaField(_l('Say something'), validators=[DataRequired()])
+    submit = SubmitField(_l('Submit'))
+    

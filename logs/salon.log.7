@@ -1,4 +1,4 @@
-2020-05-06 00:59:38,623 ERROR: Exception on /choose/12020-05-06 06:30:00 [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+2020-05-07 01:49:28,231 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 232, in choose
-    master = master_chosen, time = time, form = form)
+  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
+    prev_url=prev_url)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
@@ -26,7 +26,7 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\confirm_variant.html", line 2, in top-level template code
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -40,17 +40,12 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\confirm_variant.html", line 10, in block "app_content"
-    <p>{{_('On the date and time') }}: {{ moment(time).format('LLL') }}</p>
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_moment.py", line 130, in format
-    return self._render("format('%s')" % (fmt or ''), refresh)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_moment.py", line 123, in _render
-    t = self._timestamp_as_iso_8601(self.timestamp)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_moment.py", line 120, in _timestamp_as_iso_8601
-    return timestamp.strftime('%Y-%m-%dT%H:%M:%S' + tz)
-AttributeError: 'str' object has no attribute 'strftime'
-2020-05-06 01:02:00,897 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:02:07,564 ERROR: Exception on /choose/<Shedule 2> [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
+    {% include '_master.html' %}
+  File "C:\Users\Lisa\salon\app\templates\_master.html", line 19, in top-level template code
+    {{ _('%(about_me)s ', about_me=users[master.user_id - 1].about_me) }}
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+2020-05-07 01:49:30,900 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -66,48 +61,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 220, in choose
-    master_chosen = Master.query.filter_by(id=variant.master_id).first()
-AttributeError: 'str' object has no attribute 'master_id'
-2020-05-06 01:03:23,849 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:03:29,248 ERROR: Exception on /choose/<Shedule 2> [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 221, in choose
-    flash(variant.date_time)
-AttributeError: 'str' object has no attribute 'date_time'
-2020-05-06 01:19:41,385 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
-2020-05-06 01:19:46,083 ERROR: Exception on /schedule/1 [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\Lisa\salon\app\routes.py", line 126, in schedule
-    next_url=next_url, prev_url=prev_url)
+  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
+    prev_url=prev_url)
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
     ctx.app,
   File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
@@ -118,7 +73,7 @@ Traceback (most recent call last):
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\schedule.html", line 2, in top-level template code
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
     {% import 'bootstrap/wtf.html' as wtf %}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
     {% extends 'bootstrap/base.html' %}
@@ -132,12 +87,60 @@ Traceback (most recent call last):
     {% block content -%}
   File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
     {% block app_content %}{% endblock %}
-  File "C:\Users\Lisa\salon\app\templates\schedule.html", line 7, in block "app_content"
-    {% include '_variant.html' %}
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
+    {% include '_master.html' %}
+  File "C:\Users\Lisa\salon\app\templates\_master.html", line 19, in top-level template code
+    {{ _('%(about_me)s ', about_me=users[master.user_id - 1].about_me) }}
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'int'
+2020-05-07 01:49:55,662 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:50:27,774 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
+2020-05-07 01:50:28,879 ERROR: Exception on / [GET] [in c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Lisa\salon\app\routes.py", line 30, in index
+    prev_url=prev_url)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
     reraise(*rewrite_traceback_stack(source=source))
   File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
     raise value.with_traceback(tb)
-  File "C:\Users\Lisa\salon\app\templates\_variant.html", line 4, in template
-    <a href="{{ url_for('choose', variant = str(variant.master_id)+'.'+ str(variant.date_time) }}">
-jinja2.exceptions.TemplateSyntaxError: unexpected '}', expected ')'
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 4, in block "doc"
+    {%- block html %}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 20, in block "html"
+    {% block body -%}
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\flask_bootstrap\templates\bootstrap\base.html", line 23, in block "body"
+    {% block content -%}
+  File "C:\Users\Lisa\salon\app\templates\base.html", line 47, in block "content"
+    {% block app_content %}{% endblock %}
+  File "C:\Users\Lisa\salon\app\templates\index.html", line 7, in block "app_content"
+    {% include '_master.html' %}
+  File "C:\Users\Lisa\salon\app\templates\_master.html", line 9, in top-level template code
+    <img src="{{ users[master.user_id].avatar(70) }}" />
+  File "c:\users\lisa\salon\myvenv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: list object has no element 6
+2020-05-07 01:51:00,957 INFO: Salon startup [in C:\Users\Lisa\salon\app\__init__.py:51]
