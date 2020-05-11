@@ -12,7 +12,7 @@ class Config(object):
     MAIL_SERVER = 'smtp.gmail.com'
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 587)
     MAIL_USE_TLS = 1
-    MAIL_USERNAME = 'krylovaliza2001@gmail.com'
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['pigtail2001@gmail.com']
     LANGUAGES = ['en', 'es', 'ru']
